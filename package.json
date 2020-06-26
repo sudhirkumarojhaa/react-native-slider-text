@@ -1,0 +1,28 @@
+{
+  "name": "react-native-slider-text",
+  "version": "0.0.1",
+  "description": "A react native slider with custom text labels to show the current progress.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sudhirkumarojhaa/react-native-slider-text.git"
+  },
+  "keywords": [
+    "react-native-slider",
+    "react-component",
+    "react-native",
+    "ios",
+    "android",
+    "slider",
+    "custom"
+  ],
+  "author": "Sudhir Kumar Ojha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sudhirkumarojhaa/react-native-slider-text/issues"
+  },
+  "homepage": "https://github.com/sudhirkumarojhaa/react-native-slider-text#readme"
+}

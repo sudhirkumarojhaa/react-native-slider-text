@@ -1,6 +1,6 @@
 {
   "name": "react-native-slider-text",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "A react native slider with custom text labels to show the current progress.",
   "main": "index.js",
   "scripts": {

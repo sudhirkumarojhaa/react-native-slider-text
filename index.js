@@ -1,24 +1,22 @@
-/* eslint-disable react-native/no-inline-styles */
-import React, {useState} from 'react';
+import React from 'react';
 import {View, Text, Dimensions, StyleSheet} from 'react-native';
 import Slider from '@react-native-community/slider';
 
 const width = Dimensions.get('window').width;
 
 const SliderText = (props) => {
-  const [sliderValue, setSliderValue] = useState('0');
   const multiplier = props.multiplier || 1.12;
   const maximumValue = props.maximumValue || 10;
   const stepValue = props.stepValue || 1;
   const logic = maximumValue * multiplier;
   const left =
-    sliderValue >= 10000
-      ? (sliderValue * width) / logic - 35
-      : sliderValue >= 1000
-      ? (sliderValue * width) / logic - 20
-      : sliderValue >= 100
-      ? (sliderValue * width) / logic - 10
-      : (sliderValue * width) / logic;
+    props.sliderValue >= 10000
+      ? (props.sliderValue * width) / logic - 35
+      : props.sliderValue >= 1000
+      ? (props.sliderValue * width) / logic - 20
+      : props.sliderValue >= 100
+      ? (props.sliderValue * width) / logic - 10
+      : (props.sliderValue * width) / logic;
 
   return (
     <View style={styles.slider}>
@@ -27,7 +25,7 @@ const SliderText = (props) => {
           left: left,
         }}>
         <Text style={[styles.text, props.customCountStyle]}>
-          {Math.floor(sliderValue)}
+          {Math.floor(props.sliderValue)}
         </Text>
       </View>
       <Slider
@@ -37,10 +35,8 @@ const SliderText = (props) => {
         step={stepValue}
         minimumTrackTintColor={props.minimumTrackTintColor || '#000'}
         thumbTintColor={props.thumbTintColor || '#000'}
-        maximumTrackTintColor={props.maximumTrackTintColor || '#000'}
-        onValueChange={(sliderValues) =>
-          setSliderValue(sliderValues.toFixed(0))
-        }
+        maximumTrackTintColor={props.maximumTrackTintColor || '#e3e3e3'}
+        onValueChange={props.onValueChange}
       />
       <View style={styles.row}>
         <Text style={[styles.customLabel, props.customCountStyle]}>
@@ -56,18 +52,21 @@ const SliderText = (props) => {
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 22,
+    fontSize: 24,
     fontWeight: 'bold',
-    color: '#999',
+    color: '#000',
   },
   slider: {
     width: width - 20,
-    marginVertical: 15,
+    marginVertical: 20,
     alignSelf: 'center',
   },
   row: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+  },
+  customLabel: {
+    fontSize: 20,
   },
 });
 

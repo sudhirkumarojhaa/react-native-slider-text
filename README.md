@@ -37,24 +37,23 @@ npm install react-native-slider-text --save
 ## Usage
 
 ```jsx
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import SliderText from '../assets/SliderText';
+import SliderText from 'react-native-slider-text';
 
 const Score = () => {
+  const [sliderValue, setSliderValue] = useState(0);
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Little interest or pleasure in doing things?</Text>
       <Text style={styles.tag}>Rate your answer here: </Text>
       <SliderText
-        minimumTrackTintColor="#000"
-        thumbTintColor="#000"
-        maximumTrackTintColor="#099"
-        maximumValue={1000}
-        stepValue={1}
-        minimumValueLabel="Never"
-        maximumValueLabel="Always"
-      />
+      maximumValue={10}
+      stepValue={1}
+      minimumValueLabel="Never"
+      maximumValueLabel="Always"
+      onValueChange={(id) => setSliderValue(id)}
+      sliderValue={sliderValue} />
     </View>
   );
 };
@@ -89,6 +88,7 @@ export default Score;
 | **`maximumTrackTintColor`** | Custom color for maximum slider progress. (color)                                                                                                      | `#000`  |
 | **`sliderValueStyle`**      | Customize moving text slider value. You can add any styles related to Text Component in React Native. (style)                                          | `-`     |
 | **`customLabelStyle`**      | Customize label style below the slider. You can add any styles related to Text Component in React Native. (style)                                      | `-`     |
+| **`onValueChange`**         | function to manage the slider value on change of the slider thumb position. (function)                                                                 | `-`     |
 
 ## License
 

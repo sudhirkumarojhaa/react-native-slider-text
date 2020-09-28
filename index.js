@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, Text, Dimensions, StyleSheet} from 'react-native';
 import Slider from '@react-native-community/slider';
 
@@ -9,14 +9,20 @@ const SliderText = (props) => {
   const maximumValue = props.maximumValue || 10;
   const stepValue = props.stepValue || 1;
   const logic = maximumValue * multiplier;
+  const [sliderValue,setSliderValue] = useState(props.sliderValue || 0);
   const left =
-    props.sliderValue >= 10000
-      ? (props.sliderValue * width) / logic - 35
-      : props.sliderValue >= 1000
-      ? (props.sliderValue * width) / logic - 20
-      : props.sliderValue >= 100
-      ? (props.sliderValue * width) / logic - 10
-      : (props.sliderValue * width) / logic;
+   sliderValue >= 10000
+      ? (sliderValue * width) / logic - 35
+      : sliderValue >= 1000
+      ? (sliderValue * width) / logic - 20
+      : sliderValue >= 100
+      ? (sliderValue * width) / logic - 10
+      : (sliderValue * width) / logic;
+
+  const sendSliderValue = (slider) => {
+    setSliderValue(slider);
+    props.onValueChange(slider);
+  }
 
   return (
     <View style={styles.slider}>
@@ -25,18 +31,20 @@ const SliderText = (props) => {
           left: left,
         }}>
         <Text style={[styles.text, props.customCountStyle]}>
-          {Math.floor(props.sliderValue)}
+          {numeral(Math.floor(sliderValue)).format('Oa')}
         </Text>
       </View>
       <Slider
         style={styles.slider}
-        minimumValue={0}
+        minimumValue={props.minimumValue}
         maximumValue={maximumValue}
         step={stepValue}
         minimumTrackTintColor={props.minimumTrackTintColor || '#000'}
         thumbTintColor={props.thumbTintColor || '#000'}
         maximumTrackTintColor={props.maximumTrackTintColor || '#e3e3e3'}
-        onValueChange={props.onValueChange}
+        onValueChange={e => sendSliderValue(e)}
+        onSlidingComplete={props.onSlidingComplete}
+        value = {value}
       />
       <View style={styles.row}>
         <Text style={[styles.customLabel, props.customCountStyle]}>

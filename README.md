@@ -47,13 +47,7 @@ const Score = () => {
     <View style={styles.container}>
       <Text style={styles.title}>Little interest or pleasure in doing things?</Text>
       <Text style={styles.tag}>Rate your answer here: </Text>
-      <SliderText
-      maximumValue={10}
-      stepValue={1}
-      minimumValueLabel="Never"
-      maximumValueLabel="Always"
-      onValueChange={(id) => setSliderValue(id)}
-      sliderValue={sliderValue} />
+      <SliderText maximumValue={10} stepValue={1} minimumValueLabel="Never" maximumValueLabel="Always" onValueChange={(id) => setSliderValue(id)} sliderValue={sliderValue} />
     </View>
   );
 };
@@ -81,12 +75,15 @@ export default Score;
 | Prop                        | Description                                                                                                                                            | Default |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- |
 | **`maximumValue`**          | Add the maximum value of the slider here. (Number)                                                                                                     | `10`    |
+| **`minimumValue`**          | Add the minimum value of the slider here. (Number)                                                                                                     | `0`     |
 | **`stepValue`**             | Step value of the slider (Number)                                                                                                                      | `1`     |
+| **`value`**                 | value of the slider (Number)                                                                                                                           | `1`     |
+| **`sliderValue`**           | dynamic value of the slider (Number)                                                                                                                   | `1`     |
 | **`multiplier`**            | This is the universal logic to adjust the text location over the thumb. User may need to manipulate it depending on the maximum value. (Decimal value) | 1.12    |
 | **`minimumTrackTintColor`** | Custom color for minimum slider progress. (color)                                                                                                      | `#000`  |
 | **`thumbTintColor`**        | Custom color for thumb. (color)                                                                                                                        | `#000`  |
 | **`maximumTrackTintColor`** | Custom color for maximum slider progress. (color)                                                                                                      | `#000`  |
-| **`sliderValueStyle`**      | Customize moving text slider value. You can add any styles related to Text Component in React Native. (style)                                          | `-`     |
+| **`customCountStyle`**      | Customize moving text slider value. You can add any styles related to Text Component in React Native. (style)                                          | `-`     |
 | **`customLabelStyle`**      | Customize label style below the slider. You can add any styles related to Text Component in React Native. (style)                                      | `-`     |
 | **`onValueChange`**         | function to manage the slider value on change of the slider thumb position. (function)                                                                 | `-`     |
 

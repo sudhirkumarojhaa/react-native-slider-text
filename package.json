@@ -1,6 +1,6 @@
 {
   "name": "react-native-slider-text",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "A react native slider with custom text labels to show the current progress.",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,7 @@
     "slider",
     "custom"
   ],
-  "author": "Sudhir Kumar Sagar Raturi",
+  "author": "Sudhir Kumar, Sagar Raturi",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sudhirkumarojhaa/react-native-slider-text/issues"

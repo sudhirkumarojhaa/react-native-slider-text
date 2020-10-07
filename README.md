@@ -4,7 +4,6 @@ Read more about this package [here](https://medium.com/@sudhirKr/react-native-sl
 
 [![downloads](https://img.shields.io/npm/dt/react-native-slider-text.svg)](http://npm-stats.com/~packages/react-native-slider-text)
 [![npm-version](https://img.shields.io/npm/v/react-native-slider-text.svg)](https://www.npmjs.com/package/react-native-slider-text)
-[![github-tag](https://img.shields.io/github/tag/vikrantnegi/react-native-slider-text.svg?maxAge=1800)](https://github.com/vikrantnegi/react-native-slider-text/)
 [![license](https://img.shields.io/github/license/vikrantnegi/react-native-slider-text.svg?maxAge=1800)](https://yarnpkg.com/en/package/react-native-slider-text)
 
 A React Native Slider Component which is built around [react-native-slider](https://github.com/react-native-community/react-native-slider) providing the user ability to add moving slider value alongside the slider thumb. You can also add custom labels displaying the start text and end text below the slider.

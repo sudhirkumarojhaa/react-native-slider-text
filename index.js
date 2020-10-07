@@ -19,7 +19,7 @@ const SliderText = (props) => {
   };
 
   return (
-    <View style={styles.slider}>
+    <View style={[styles.slider, props.containerStyle]}>
       <View
         style={{
           transform: [{translateX: left}]
@@ -28,7 +28,7 @@ const SliderText = (props) => {
         <Text style={[ styles.text, props.customCountStyle ]}>{Math.floor(sliderValue)}</Text>
       </View>
       <Slider
-        style={[styles.slider, props.containerStyle]}
+        style={[styles.slider, props.sliderStyle]}
         minimumValue={props.minimumValue || 0}
         maximumValue={maximumValue}
         step={stepValue}

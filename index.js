@@ -22,13 +22,13 @@ const SliderText = (props) => {
     <View style={styles.slider}>
       <View
         style={{
-          left: left
+          transform: [{translateX: left}]
         }}
       >
         <Text style={[ styles.text, props.customCountStyle ]}>{Math.floor(sliderValue)}</Text>
       </View>
       <Slider
-        style={props.containerStyle || styles.slider}
+        style={[styles.slider, props.containerStyle]}
         minimumValue={props.minimumValue || 0}
         maximumValue={maximumValue}
         step={stepValue}
